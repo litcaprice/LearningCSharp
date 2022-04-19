@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string filename = @"C:\Users\Alina\Downloads\38602.txt";
+        string text = File.ReadAllText(filename);
+        int letterCount = 1;
+        int maxCount = 0;
+        for (int i = 1; i < text.Length; i++)
+        {
+            if (text[i] == text[i - 1] && text[i] == 'P')
+            {
+                letterCount = 1;
+            }
+            else
+            {
+                letterCount++;
+            }
+            if (letterCount > maxCount)
+            {
+                maxCount = letterCount;
+            }
+        } 
+        Console.WriteLine(maxCount);
+    }
+}
